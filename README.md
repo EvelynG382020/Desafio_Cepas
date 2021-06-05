@@ -9,4 +9,6 @@ Tips
 - Es recomendable modelar nuestros modelos y relaciones en papel o bien algún software como ​https://app.diagrams.net/ para que nos sea más fácil razonar sobre ellos.
 - Una cepa es un tipo de vino (como por ejemplo Cabernet Sauvignon, Merlot, etc)
 - Un ensamblaje es un vino compuesto de varias cepas, por ejemplo un ensamblaje llamado “Mountain’s best” podría ser un ensamblaje compuesto de 60% Cabernet Sauvignon 40% Merlot.
-- Un vino es el término genérico, podría ser un vino 100% de una cepa, o un ensamblaje. El vino tiene una o más cepas (las cuales están definidas en el ensamblaje)
+- Un vino es el término genérico, podría ser un vino 100% de una cepa, o un ensamblaje. El vino tiene una o más cepas (las cuales están definidas en el ensamblaje).
+- (DROP TABLE STRAIN_WINES, wines_id y strains_id)
+- (CORRECTO: TABLE WINE_STRAINS, wine_id y strain_id)
