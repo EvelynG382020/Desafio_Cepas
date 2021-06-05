@@ -1,4 +1,5 @@
 # DESAFIO 1 CEPAS
+NOTA: SOLO EL ADMIN: test2@gmail.com password "prueba". Al loguearte nuevo usuario solo podrás ver la lista de los vinos,  no podrás editar, eliminar ni agregar. 
 A Peter le gusta catar vinos, sobre todo del tipo ensamblajes. Un ensamblaje es un vino que es mezcla de varias cepas en diferentes proporciones. Sin embargo, tiene muy mala memoria y no recuerda que cepas tienen los vinos que ha probado.
 1. Identificarás los modelos involucrados y generar los controladores, vistas y modelos necesarios para administrar cada uno de los recursos.
 2. Peter tiene muy poco tiempo, por lo que tendrás que diseñar una vista que le permita asignar de manera rápida todas las cepas del vino y su proporción en él (pueden ser 1 o más)
