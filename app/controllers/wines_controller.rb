@@ -14,7 +14,7 @@ class WinesController < ApplicationController
   def new
     @wine = Wine.new
     @wine.wine_strains.build
-    @strains = Strain.all.order(name: :asc)
+    #@strains = Strain.all.order(name: :asc)
   end
 
   # GET /wines/1/edit

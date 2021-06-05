@@ -23,7 +23,7 @@ class Wine < ApplicationRecord
            list.push [ws.strain.name, ws.percentage] 
         end
         list.sort_by{ |strain| strain[0] }.map do |cepa|
-            "#{cepa[0]} (#{cepa[1]})%”"
+            "#{cepa[0]} (#{cepa[1]})%"
         end.join(', ')
     end
 
