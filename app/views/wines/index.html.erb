@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Vinos </h1>
+<table class="table mt-4">
+  <thead class="table table-dark">
+    <tr>
+      <th class="text-center">Nombre</th>
+      <th class="text-center">Cepa</th>
+      <th class="text-center">Nota</th>
+      <th class="text-center">Enologo</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wines.each do |wine| %>
+      <tr>
+        <td class="text-center"><%= wine.name %></td>
+        <td class="text-center"><%= wine.strain_names_and_percentages %></td>
+        <td class="text-center"><%= wine.grade %></td>
+        <td class="text-center"><%= wine.oenologist_name %></td>
+        <td><%= link_to 'Show', wine %></td>
+        <% if current_user.admin? %> 
+          <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
+          <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>    
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'New Wine', new_wine_path %> |
+  <%= link_to 'Strain', strains_path %> |
+  <%= link_to 'Ver Enologos', oenologists_path %>
+<% end %>
+<br>
+
+<%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-light mx-4'  %>

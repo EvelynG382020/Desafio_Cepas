@@ -1,0 +1,51 @@
+<%= form_with(model: wine) do |form| %>
+  <% if wine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+
+      <ul>
+        <% wine.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= form.label :name %> 
+      <%= form.text_field :name %>
+  </div>
+  <br>
+  <div class="field">
+      <%= form.label :grade %>
+      <%= form.text_field :grade %>
+  </div>
+
+  <br>
+
+  <div class="field">
+      <%= form.label :oenologists %>    
+      <%= form.collection_check_boxes(:oenologist_ids, Oenologist.all, :id, :name) do |b| %>
+          <%= b.label class: "lable-checkbox" do %>
+              <%= b.check_box + b.text %>
+          <% end %>
+      <% end %>
+  </div>
+  
+  <div class="field">
+      <%= form.label :strains %>    
+      <%= form.collection_check_boxes(:strain_ids, Strain.all, :id, :name) do |strain| %>
+          <%= strain.label class: "lable-checkbox" do %>
+              <%= strain.check_box + strain.text %>
+              <%= form.label :percentage %>
+              <%= text_field("wine[percentage]", strain.value) %>
+          <% end %>
+      <% end %>
+  </div>
+  
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

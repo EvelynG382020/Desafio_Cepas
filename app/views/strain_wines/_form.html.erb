@@ -1,0 +1,17 @@
+<%= form_with(model: strain_wine) do |form| %>
+  <% if strain_wine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(strain_wine.errors.count, "error") %> prohibited this strain_wine from being saved:</h2>
+
+      <ul>
+        <% strain_wine.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

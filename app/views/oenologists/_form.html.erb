@@ -1,0 +1,55 @@
+<%= form_with(model: oenologist) do |form| %>
+  <% if oenologist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oenologist.errors.count, "error") %> prohibited this oenologist from being saved:</h2>
+
+      <ul>
+        <% oenologist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality %>
+  </div>
+
+  <div class="field">
+    <%= form.label :editor %>
+    <%= form.text_field :editor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :writer %>
+    <%= form.text_field :writer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reviewer %>
+    <%= form.text_field :reviewer %>
+  </div>
+
+  <div class= "field" >
+    <%= form.label :magazines %>
+      <%= form.collection_check_boxes(:magazine_ids , Magazine.all, :id, :name ) do |b| %>
+          <%= b.label class: "label-checkbox" do %>
+          <%= b.check_box + b.text%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>BDD Enólogos</h1>
+
+<table class="table mt-4">
+  <thead class="table table-dark">
+    <tr>
+      <th class="text-center">Nombre</th>
+      <th class="text-center">Edad</th>
+      <th class="text-center">Nacionalidad</th>
+      <th class="text-center">Revista</th>
+      <th class="text-center">Editor</th>
+      <th class="text-center">Escritor</th>
+      <th class="text-center">Crítico</th>
+      <th colspan="6"></th>
+    </tr>
+
+    <tbody>
+      <% @oenologists.each do |oenologist| %>
+        <tr>
+          <td class="text-center"><%= oenologist.name %></td>
+          <td class="text-center"><%= oenologist.age %></td>
+          <td class="text-center"><%= oenologist.nationality %></td>
+          <td class="text-center"><%= oenologist.magazine_name %></td>
+          <td class="text-center"><%= oenologist.editor %></td>
+          <td class="text-center"><%= oenologist.writer %></td>
+          <td class="text-center"><%= oenologist.reviewer %></td>
+            
+          <td class="text-center"><%= link_to 'Show', oenologist %></td>
+          <td class="text-center"><%= link_to 'Edit', edit_oenologist_path(oenologist) %></td>
+          <td class="text-center"><%= link_to 'Destroy', oenologist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </thead>  
+</table>
+
+<br>
+
+<%= link_to 'New Oenologist', new_oenologist_path %> |
+<%= link_to 'Back Wine Pages', wines_path %>
