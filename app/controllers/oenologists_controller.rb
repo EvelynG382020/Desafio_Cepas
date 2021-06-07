@@ -13,6 +13,7 @@ class OenologistsController < ApplicationController
   # GET /oenologists/new
   def new
     @oenologist = Oenologist.new
+    
   end
 
   # GET /oenologists/1/edit
